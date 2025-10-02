@@ -5,113 +5,102 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>KYAN CAFE | القائمة</title>
   <meta name="description" content="قائمة KYAN CAFE - المشروبات والحلويات">
-  <meta property="og:title" content="KYAN CAFE | القائمة">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar_AR">
-  <meta name="theme-color" content="#0fa3b1">
+  <meta name="theme-color" content="#52c1d4">
 
   <style>
     :root{
-      --bg:#0b0e13;
-      --card:#121722;
-      --text:#e7eef7;
-      --muted:#a4b1c3;
-      --brand:#0fa3b1;
-      --brand-2:#5bd4d8;
-      --shadow: 0 8px 30px rgba(0,0,0,.18);
-      --radius: 18px;
+      --brand:#52c1d4;
+      --brand-2:#2ba9c0;
+      --text:#1b2430;
+      --muted:#546174;
+      --card:#ffffff;
+      --shadow:0 10px 24px rgba(0,0,0,.08);
+      --radius:18px;
+
+      /* تدرّج الخلفية (وضع فاتح) */
+      --bg-grad:linear-gradient(
+        135deg,
+        #e9f7fa 0%,
+        #cfeef4 28%,
+        #a7e1ea 55%,
+        #7fd6e3 78%,
+        #52c1d4 100%
+      );
     }
-    @media (prefers-color-scheme: light){
+    @media (prefers-color-scheme: dark){
       :root{
-        --bg:#f6f8fb;
-        --card:#ffffff;
-        --text:#1b2430;
-        --muted:#5d6b7e;
-        --brand:#0fa3b1;
-        --brand-2:#087e84;
-        --shadow: 0 10px 24px rgba(15,163,177,.12);
+        --text:#e7eef7;
+        --muted:#a4b1c3;
+        --card:#121722;
+        --shadow:0 8px 30px rgba(0,0,0,.18);
+
+        /* تدرّج خلفية أغمق للوضع الداكن */
+        --bg-grad:linear-gradient(
+          135deg,
+          #0e1b21 0%,
+          #0f2a33 25%,
+          #134a57 55%,
+          #1b7083 80%,
+          #2aa7bd 100%
+        );
       }
     }
 
     *{box-sizing:border-box}
     body{
-      margin:0;background:var(--bg);color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", "Noto Kufi Arabic", Arial;
+      margin:0;color:var(--text);
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic","Noto Kufi Arabic",Arial;
       -webkit-font-smoothing:antialiased;line-height:1.6;
+      background:var(--bg-grad);
+      background-attachment:fixed;
     }
 
-    /* Header */
     .nav{
       position:sticky;top:0;z-index:100;
       backdrop-filter:saturate(160%) blur(8px);
-      background:linear-gradient(180deg, rgba(10,14,18,.8), rgba(10,14,18,.4));
-      border-bottom:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.35));
+      border-bottom:1px solid rgba(0,0,0,.06);
     }
-    @media (prefers-color-scheme: light){
-      .nav{ background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.6)); border-color:rgba(0,0,0,.06); }
+    @media (prefers-color-scheme: dark){
+      .nav{
+        background:linear-gradient(180deg,rgba(10,14,18,.75),rgba(10,14,18,.45));
+        border-color:rgba(255,255,255,.06);
+      }
     }
-    .nav-inner{
-      max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:center;
-    }
+    .nav-inner{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:center}
     .brand h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.5px}
 
-    /* Hero */
-    .hero{
-      max-width:1100px;margin:28px auto 8px;padding:0 20px;text-align:center;
-    }
+    .hero{max-width:1100px;margin:28px auto 8px;padding:0 20px;text-align:center}
     .hero h2{margin:.2rem 0 0;font-size:28px}
     .hero p{margin:.3rem auto 0;max-width:640px;color:var(--muted)}
 
-    /* Grid */
-    .grid{
-      max-width:1100px;margin:22px auto;padding:0 20px;
-      display:grid;gap:22px;grid-template-columns:1fr;
-    }
-    @media(min-width:860px){ .grid{ grid-template-columns:1fr 1fr; } }
+    .grid{max-width:1100px;margin:22px auto;padding:0 20px;display:grid;gap:22px;grid-template-columns:1fr}
+    @media(min-width:860px){ .grid{grid-template-columns:1fr 1fr} }
 
-    /* Card */
-    .card{
-      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
-      padding:14px;border:1px solid rgba(255,255,255,.06);
-    }
-    @media (prefers-color-scheme: light){ .card{ border-color:rgba(0,0,0,.06);} }
-    .card img{
-      width:100%;height:auto;border-radius:12px;display:block;
-      transition:transform .25s ease, box-shadow .25s ease; cursor:zoom-in;
-    }
-    .card img:hover{ transform:scale(1.01); box-shadow:0 12px 28px rgba(0,0,0,.18);}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;border:1px solid rgba(0,0,0,.06)}
+    @media (prefers-color-scheme: dark){ .card{ border-color:rgba(255,255,255,.08)} }
+    .card img{width:100%;height:auto;border-radius:12px;display:block;transition:transform .25s ease, box-shadow .25s ease;cursor:zoom-in}
+    .card img:hover{transform:scale(1.01); box-shadow:0 12px 28px rgba(0,0,0,.18)}
     .card .card-title{font-weight:700;margin:6px 2px 10px}
+
     .actions{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{
-      appearance:none;border:0;border-radius:12px;padding:10px 14px;font-weight:700;
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;cursor:pointer;
-      transition:transform .15s ease, filter .15s ease; box-shadow:var(--shadow);
-    }
-    .btn:hover{ filter:brightness(1.05); transform:translateY(-1px); }
-    .btn.ghost{
-      background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--text)
-    }
-    @media (prefers-color-scheme: light){ .btn.ghost{ border-color:rgba(0,0,0,.12);} }
+    .btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;font-weight:700;
+         background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;cursor:pointer;
+         transition:transform .15s ease, filter .15s ease; box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(1.05); transform:translateY(-1px)}
+    .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,.12);color:inherit}
+    @media (prefers-color-scheme: dark){ .btn.ghost{border-color:rgba(255,255,255,.14)} }
 
-    footer{
-      max-width:1100px;margin:24px auto 40px;padding:0 20px;color:var(--muted);text-align:center;font-size:14px
-    }
+    footer{max-width:1100px;margin:24px auto 40px;padding:0 20px;color:var(--muted);text-align:center;font-size:14px}
 
-    /* Lightbox */
-    .modal{
-      position:fixed;inset:0;background:rgba(0,0,0,.72);
-      display:none;align-items:center;justify-content:center;padding:20px;z-index:200;
-    }
-    .modal.open{ display:flex; }
-    .modal img{ max-width:96vw;max-height:90vh;border-radius:14px }
-    .modal .close{
-      position:absolute;top:16px;left:16px;background:#000000aa;color:#fff;border:0;border-radius:10px;padding:8px 10px;cursor:pointer;font-weight:800
-    }
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:200}
+    .modal.open{display:flex}
+    .modal img{max-width:96vw;max-height:90vh;border-radius:14px}
+    .modal .close{position:absolute;top:16px;left:16px;background:#000000aa;color:#fff;border:0;border-radius:10px;padding:8px 10px;cursor:pointer;font-weight:800}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <nav class="nav">
     <div class="nav-inner">
       <div class="brand">
@@ -120,15 +109,12 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <h2>قائمة KYAN CAFE</h2>
     <p>اضغط على الصورة للتكبير أو لتحميلها مباشرة.</p>
   </section>
 
-  <!-- Content -->
   <main class="grid">
-    <!-- Card 1 -->
     <article class="card">
       <div class="card-title">القائمة — الصفحة الأولى</div>
       <img src="IMG_5321.PNG" alt="KYAN CAFE - الصفحة الأولى" loading="lazy" data-full="IMG_5321.PNG">
@@ -138,7 +124,6 @@
       </div>
     </article>
 
-    <!-- Card 2 -->
     <article class="card">
       <div class="card-title">القائمة — الصفحة الثانية</div>
       <img src="IMG_5322.PNG" alt="KYAN CAFE - الصفحة الثانية" loading="lazy" data-full="IMG_5322.PNG">
@@ -151,7 +136,6 @@
 
   <footer>© KYAN CAFE — جميع الحقوق محفوظة</footer>
 
-  <!-- Lightbox -->
   <div class="modal" id="lightbox">
     <button class="close" aria-label="إغلاق" id="closeBtn">إغلاق ✕</button>
     <img alt="">
