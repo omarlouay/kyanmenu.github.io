@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>KYAN | القائمة</title>
-  <meta name="description" content="قائمة كيان - المشروبات والحلويات">
-  <meta property="og:title" content="KYAN | القائمة">
+  <title>KYAN CAFE | القائمة</title>
+  <meta name="description" content="قائمة KYAN CAFE - المشروبات والحلويات">
+  <meta property="og:title" content="KYAN CAFE | القائمة">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ar_AR">
   <meta name="theme-color" content="#0fa3b1">
 
   <style>
     :root{
-      --bg:#0b0e13;             /* للداكن */
+      --bg:#0b0e13;
       --card:#121722;
       --text:#e7eef7;
       --muted:#a4b1c3;
@@ -23,7 +23,7 @@
     }
     @media (prefers-color-scheme: light){
       :root{
-        --bg:#f6f8fb;           /* للفاتح */
+        --bg:#f6f8fb;
         --card:#ffffff;
         --text:#1b2430;
         --muted:#5d6b7e;
@@ -34,10 +34,9 @@
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;background:var(--bg);color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", "Noto Kufi Arabic", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", "Noto Kufi Arabic", Arial;
       -webkit-font-smoothing:antialiased;line-height:1.6;
     }
 
@@ -52,16 +51,9 @@
       .nav{ background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.6)); border-color:rgba(0,0,0,.06); }
     }
     .nav-inner{
-      max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;
+      max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:center;
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;
-    }
-    .brand-badge{
-      width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      display:grid;place-items:center;color:white;font-weight:900;box-shadow:var(--shadow)
-    }
-    .brand h1{font-size:18px;margin:0}
+    .brand h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.5px}
 
     /* Hero */
     .hero{
@@ -73,7 +65,7 @@
     /* Grid */
     .grid{
       max-width:1100px;margin:22px auto;padding:0 20px;
-      display:grid;gap:22px;grid-template-columns:1fr; 
+      display:grid;gap:22px;grid-template-columns:1fr;
     }
     @media(min-width:860px){ .grid{ grid-template-columns:1fr 1fr; } }
 
@@ -101,12 +93,11 @@
     }
     @media (prefers-color-scheme: light){ .btn.ghost{ border-color:rgba(0,0,0,.12);} }
 
-    /* Footer */
     footer{
       max-width:1100px;margin:24px auto 40px;padding:0 20px;color:var(--muted);text-align:center;font-size:14px
     }
 
-    /* Lightbox (Modal) */
+    /* Lightbox */
     .modal{
       position:fixed;inset:0;background:rgba(0,0,0,.72);
       display:none;align-items:center;justify-content:center;padding:20px;z-index:200;
@@ -124,25 +115,23 @@
   <nav class="nav">
     <div class="nav-inner">
       <div class="brand">
-        <div class="brand-badge">K</div>
-        <h1>KYAN Café</h1>
+        <h1>KYAN CAFE</h1>
       </div>
-      <div style="color:var(--muted);font-size:14px">القائمة الرسمية</div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <h2>قائمة كيان</h2>
-    <p>اطّلع على منيو المشروبات والحلويات. اضغط على الصورة للتكبير أو لتحميلها مباشرة.</p>
+    <h2>قائمة KYAN CAFE</h2>
+    <p>اضغط على الصورة للتكبير أو لتحميلها مباشرة.</p>
   </section>
 
   <!-- Content -->
   <main class="grid">
     <!-- Card 1 -->
     <article class="card">
-      <div class="card-title">المنيو — الصفحة الأولى</div>
-      <img src="IMG_5321.PNG" alt="قائمة كيان - الصفحة الأولى" loading="lazy" data-full="IMG_5321.PNG">
+      <div class="card-title">القائمة — الصفحة الأولى</div>
+      <img src="IMG_5321.PNG" alt="KYAN CAFE - الصفحة الأولى" loading="lazy" data-full="IMG_5321.PNG">
       <div class="actions">
         <button class="btn" data-open="IMG_5321.PNG">تكبير</button>
         <a class="btn ghost" href="IMG_5321.PNG" download>تحميل الصورة</a>
@@ -151,8 +140,8 @@
 
     <!-- Card 2 -->
     <article class="card">
-      <div class="card-title">المنيو — الصفحة الثانية</div>
-      <img src="IMG_5322.PNG" alt="قائمة كيان - الصفحة الثانية" loading="lazy" data-full="IMG_5322.PNG">
+      <div class="card-title">القائمة — الصفحة الثانية</div>
+      <img src="IMG_5322.PNG" alt="KYAN CAFE - الصفحة الثانية" loading="lazy" data-full="IMG_5322.PNG">
       <div class="actions">
         <button class="btn" data-open="IMG_5322.PNG">تكبير</button>
         <a class="btn ghost" href="IMG_5322.PNG" download>تحميل الصورة</a>
@@ -160,7 +149,7 @@
     </article>
   </main>
 
-  <footer>© KYAN Café — جميع الحقوق محفوظة</footer>
+  <footer>© KYAN CAFE — جميع الحقوق محفوظة</footer>
 
   <!-- Lightbox -->
   <div class="modal" id="lightbox">
@@ -169,7 +158,6 @@
   </div>
 
   <script>
-    // Lightbox
     const modal = document.getElementById('lightbox');
     const modalImg = modal.querySelector('img');
     const closeBtn = document.getElementById('closeBtn');
@@ -187,7 +175,7 @@
     }
 
     document.querySelectorAll('[data-open]').forEach(btn=>{
-      btn.addEventListener('click', e=>{
+      btn.addEventListener('click', ()=>{
         const src = btn.getAttribute('data-open');
         openLightbox(src, 'عرض مكبّر');
       });
